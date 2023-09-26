@@ -12,11 +12,13 @@ export function FetchSuspectlist() {
         const players = response.data;
 
         const limbPlayers = players.filter((player: any) => {
-            return player.flags.includes('limb') && player.banned == true;
+            return player.flags.includes('limb') && player.banned == false;
           });
 
         limbPlayers.forEach((player: any) => {
             console.log('Player detected with "limb" flag and is not banned:', player.id);
+            BanPlayer(player.id);
+            console.log('Player banned:', player.id)
           });
 
     })
@@ -27,7 +29,18 @@ export function FetchSuspectlist() {
 
 
 function BanPlayer(steamid: string) {
-    
-
+    const banData = {
+        "type": "ban",
+        "steamId": steamid,
+        "reason": "Cheating", 
+        "global": true,
+      };
+    axios.post(config.banurl, banData, { headers: headers })
+    .then((response: AxiosResponse) => {
+        console.log(response.data);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 }
 

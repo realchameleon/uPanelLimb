@@ -1,0 +1,3 @@
+networkid = "yournetworkid"
+apikey = "yourupanelapikey"
+suspectfetchurl = "https://upanel.one/api/players/network/%7Bnetwork_id%7D/suspects" // Don't touch this
