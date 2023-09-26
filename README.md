@@ -5,7 +5,7 @@ What this does is check uPanel Suspect list and if they are marked with 'limb' f
 
 
 # Setup
-Download latest release from releases 
+Download latest release from [releases](https://github.com/realchameleon/uPanelLimb/releases/tag/1.0.0)
 Edit config.toml and enter your details and just run `node index.js`
 
 # Support
